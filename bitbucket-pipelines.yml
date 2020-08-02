@@ -12,7 +12,7 @@ pipelines:
         script:
           - npm install && npm run build 
         artifacts:
-          - build/**
+          - dist/**
           
     - step:
         name: Deploy to Firebase
