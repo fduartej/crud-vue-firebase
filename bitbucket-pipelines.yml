@@ -9,13 +9,8 @@ pipelines:
 
     - step:
         name: Build
-        caches:
-         - node
         script:
-          - npm install firebase-tools  
           - npm install && npm run build 
-          - firebase init
-          - firebase deploy
         artifacts:
           - dist/**
           
