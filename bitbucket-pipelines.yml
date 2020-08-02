@@ -12,7 +12,7 @@ pipelines:
         caches:
          - node
         script:
-          - npm install && npm run build:prod && cd build
+          - npm install && npm run build && cd build
         artifacts:
           - build/**
 
