@@ -5,17 +5,24 @@ pipelines:
     - step:
         name: Test
         script:
-          - npm install && npm test
+          - npm install && npm test 
+          - npm install firebase-tools  
 
     - step:
         name: Build
         caches:
          - node
         script:
-          - npm install && npm run build && cd dist
+          - npm install && npm run build 
         artifacts:
           - dist/**
-
+          
+    - step:
+        name: Firebase Init
+        script:
+          - cd dist 
+          - firebase init
+          - firebase deploy
 
     - step:
         name: Deploy to Firebase
