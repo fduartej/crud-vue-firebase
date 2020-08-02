@@ -11,9 +11,8 @@ pipelines:
         name: Build
         caches:
          - node
-        deployment: testing
         script:
-          - npm install && npm run build:prod
+          - npm install && npm run build:prod && cd build
         artifacts:
           - build/**
 
