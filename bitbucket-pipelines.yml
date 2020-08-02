@@ -9,10 +9,14 @@ pipelines:
 
     - step:
         name: Build
+        caches:
+         - node
+        deployment: testing
         script:
-          - npm install && npm run build
+          - npm install && npm run build:prod
         artifacts:
           - build/**
+
 
     - step:
         name: Deploy to Firebase
