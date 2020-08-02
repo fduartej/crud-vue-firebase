@@ -10,6 +10,7 @@ pipelines:
     - step:
         name: Build
         script:
+          - npm install --save eslint
           - npm install && npm run build 
         artifacts:
           - dist/**
