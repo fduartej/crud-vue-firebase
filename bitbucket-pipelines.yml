@@ -12,9 +12,9 @@ pipelines:
         caches:
          - node
         script:
-          - npm install && npm run build && cd build
+          - npm install && npm run build && cd dist
         artifacts:
-          - build/**
+          - dist/**
 
 
     - step:
