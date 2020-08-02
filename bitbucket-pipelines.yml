@@ -13,12 +13,25 @@ pipelines:
           - npm install && npm run build 
         artifacts:
           - dist/**
+
+    #- step:
+    #    name: Deploy to Production Firebase
+    #    deployment: test
+    #    script:
+    #      - pipe: atlassian/firebase-deploy:0.4.0
+    #        variables:
+    #          FIREBASE_TOKEN: $FIREBASE_TOKEN
+    #          PROJECT_ID: $FIREBASE_PROJECT
+    #          EXTRA_ARGS: '--only functions'
+    #          DEBUG: 'true'          
           
     - step:
-        name: Deploy to Firebase
+        name: Deploy to Production Firebase
         deployment: production
         script:
           - pipe: atlassian/firebase-deploy:0.4.0
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
               PROJECT_ID: $FIREBASE_PROJECT
+              EXTRA_ARGS: '--only functions'
+              DEBUG: 'true'
