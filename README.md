@@ -31,4 +31,8 @@ firebase init
 firebase login:ci
 
 firebase init functions
+
+https://gist.github.com/adilsoncarvalho/db8e72c494c82b15a50e981cdbf50727
+
+https://bitbucket.org/bitbucketpipelines/example-firebase-deploy/src/master/
 ```

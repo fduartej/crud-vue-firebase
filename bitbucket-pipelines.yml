@@ -14,12 +14,6 @@ pipelines:
         artifacts:
           - dist/**
 
-    - step:
-        name: Functions
-        script:
-          - cd functions
-          - npm install -g eslint 
-
     #- step:
     #    name: Deploy to Production Firebase
     #    deployment: test
@@ -35,6 +29,8 @@ pipelines:
         name: Deploy to Production Firebase
         deployment: production
         script:
+          - cd functions
+          - npm install -g eslint
           - pipe: atlassian/firebase-deploy:0.4.0
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
