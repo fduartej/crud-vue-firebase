@@ -5,23 +5,20 @@ pipelines:
     - step:
         name: Test
         script:
-          - npm install && npm test
+          - npm install && npm test 
 
     - step:
         name: Build
-        caches:
-         - node
         script:
-          - npm install && npm run build && cd dist
+          - npm install && npm run build 
         artifacts:
-          - dist/**
-
-
+          - build/**
+          
     - step:
         name: Deploy to Firebase
         deployment: production
         script:
-          - pipe: atlassian/firebase-deploy:0.2.1
+          - pipe: atlassian/firebase-deploy:0.4.0
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
               PROJECT_ID: $FIREBASE_PROJECT
