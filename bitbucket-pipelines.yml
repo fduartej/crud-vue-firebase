@@ -10,10 +10,16 @@ pipelines:
     - step:
         name: Build
         script:
-          - npm install --save eslint
           - npm install && npm run build 
         artifacts:
           - dist/**
+
+    - step:
+        name: Functions
+        script:
+          - cd functions
+          - npm install -g eslint 
+          - eslint .
 
     #- step:
     #    name: Deploy to Production Firebase
