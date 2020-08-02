@@ -33,5 +33,5 @@ pipelines:
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
               PROJECT_ID: $FIREBASE_PROJECT
-              EXTRA_ARGS: '--only functions'
+              #EXTRA_ARGS: '--only functions'
               DEBUG: 'true'
