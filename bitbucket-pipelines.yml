@@ -29,6 +29,7 @@ pipelines:
         name: Deploy to Production Firebase
         deployment: production
         script:
+          - npm i -g firebase-tools
           - pipe: atlassian/firebase-deploy:0.4.0
             variables:
               FIREBASE_TOKEN: $FIREBASE_TOKEN
